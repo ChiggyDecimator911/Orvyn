@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon TCG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main class="container">
+        <div class="page-header">
+            <button class="back-btn" onclick="navigateTo('../cards.html')">← TCG Cards</button>
+            <h2>Pokémon TCG</h2>
+            <p class="subtitle">Gotta catch 'em all! You can collect them too.</p>
+            <div class="search-container">
+                <input type="text" id="globalSearch" placeholder="Search series..." class="search-input">
+            </div>
+        </div>
+        <section class="categories">
+            <div class="category-grid">
+                <!-- Mega Evolution Category -->
+                <div class="category-card" data-category="pokemon-mega-evolution" onclick="navigateTo('../tcg/pokemon/mega-evolution.html')">
+                    <div class="category-icon"><img src="../../images/tcg/pokemon/series/mega-evolution.webp" alt="Mega Evolution"></div>
+                    <h4>Mega Evolution</h4>
+                    <p>Pokémon Legends: Z-A</p>
+                    <span class="item-count">0 sets</span>
+                </div>
+
+                <!-- Scarlet and Violet Category -->
+                <div class="category-card" data-category="pokemon-scarlet-and-violet" onclick="navigateTo('../tcg/pokemon/scarlet-and-violet.html')">
+                    <div class="category-icon"><img src="../../images/tcg/pokemon/series/scarlet-and-violet.webp" alt="Scarlet and Violet"></div>
+                    <h4>Scarlet and Violet</h4>
+                    <p>Pokémon: Scarlet and Violet</p>
+                    <span class="item-count">0 sets</span>
+                </div>
+
+                <!-- Sword and Shield Category -->
+                <div class="category-card" data-category="pokemon-sword-and-shield" onclick="navigateTo('../tcg/pokemon/sword-and-shield.html')">
+                    <div class="category-icon"><img src="../../images/tcg/pokemon/series/sword-and-shield.webp" alt="Sword and Shield"></div>
+                    <h4>Sword and Shield</h4>
+                    <p>Pokémon: Sword, Shield and Legends: Arceus</p>
+                    <span class="item-count">0 sets</span>
+                </div>
+
+                <!-- Sun and Moon Category -->
+                <div class="category-card" data-category="pokemon-sun-and-moon" onclick="navigateTo('../tcg/pokemon/sun-and-moon.html')">
+                    <div class="category-icon"><img src="../../images/tcg/pokemon/series/sun-and-moon.webp" alt="Sun and Moon"></div>
+                    <h4>Sun and Moon</h4>
+                    <p>Pokémon: Sun and Moon</p>
+                    <span class="item-count">0 sets</span>
+                </div>
+
+                <!-- XY Category -->
+                <div class="category-card" data-category="pokemon-xy" onclick="navigateTo('../tcg/pokemon/xy.html')">
+                    <div class="category-icon"><img src="../../images/tcg/pokemon/series/xy.webp" alt="XY"></div>
+                    <h4>XY</h4>
+                    <p>Pokémon: X and Y</p>
+                    <span class="item-count">0 sets</span>
+                </div>
+
+                <!-- Black and White Category -->
+                <div class="category-card" data-category="pokemon-black-and-white" onclick="navigateTo('../tcg/pokemon/black-and-white.html')">
+                    <div class="category-icon"><img src="../../images/tcg/pokemon/series/black-and-white.webp" alt="Black and White"></div>
+                    <h4>Black and White</h4>
+                    <p>Pokémon: Black and White</p>
+                    <span class="item-count">0 sets</span>
+                </div>
+
+                <!-- HeartGold and SoulSilver Category -->
+                <div class="category-card" data-category="pokemon-heartgold-and-soulsilver" onclick="navigateTo('../tcg/pokemon/heartgold-and-soulsilver.html')">
+                    <div class="category-icon"><img src="../../images/tcg/pokemon/series/heartgold-and-soulsilver.webp" alt="HeartGold and SoulSilver"></div>
+                    <h4>HeartGold and SoulSilver</h4>
+                    <p>Pokémon: HeartGold and SoulSilver</p>
+                    <span class="item-count">0 sets</span>
+                </div>
+
+                <!-- Platinum Category -->
+                <div class="category-card" data-category="pokemon-platinum" onclick="navigateTo('../tcg/pokemon/platinum.html')">
+                    <div class="category-icon"><img src="../../images/tcg/pokemon/series/platinum.webp" alt="Platinum"></div>
+                    <h4>Platinum</h4>
+                    <p>Pokémon: Platinum</p>
+                    <span class="item-count">0 sets</span>
+                </div>
+
+                <!-- Diamond and Pearl Category -->
+                <div class="category-card" data-category="pokemon-diamond-and-pearl" onclick="navigateTo('../tcg/pokemon/diamond-and-pearl.html')">
+                    <div class="category-icon"><img src="../../images/tcg/pokemon/series/diamond-and-pearl.webp" alt="Diamond and Pearl"></div>
+                    <h4>Diamond and Pearl</h4>
+                    <p>Pokémon: Diamond and Pearl</p>
+                    <span class="item-count">0 sets</span>
+                </div>
+
+                <!-- EX Category -->
+                <div class="category-card" data-category="pokemon-ex" onclick="navigateTo('../tcg/pokemon/ex.html')">
+                    <div class="category-icon"><img src="../../images/tcg/pokemon/series/ex.webp" alt="EX"></div>
+                    <h4>EX</h4>
+                    <p>Pokémon: Ruby, Sapphire and Emerald</p>
+                    <span class="item-count">0 sets</span>
+                </div>
+
+                <!-- e-Card Category -->
+                <div class="category-card" data-category="pokemon-e-card" onclick="navigateTo('../tcg/pokemon/e-Card.html')">
+                    <div class="category-icon"><img src="../../images/tcg/pokemon/series/e-card.webp" alt="e-Card"></div>
+                    <h4>e-Card</h4>
+                    <p>Nintendo Game Boy Advance</p>
+                    <span class="item-count">0 sets</span>
+                </div>
+
+                <!-- Neo Category -->
+                <div class="category-card" data-category="pokemon-neo" onclick="navigateTo('../tcg/pokemon/neo.html')">
+                    <div class="category-icon"><img src="../../images/tcg/pokemon/series/neo.webp" alt="Neo"></div>
+                    <h4>Neo</h4>
+                    <p>Pokémon: Gold, Silver and Crystal</p>
+                    <span class="item-count">0 sets</span>
+                </div>
+
+                <!-- Gym Category -->
+                <div class="category-card" data-category="pokemon-gym" onclick="navigateTo('../tcg/pokemon/gym.html')">
+                    <div class="category-icon"><img src="../../images/tcg/pokemon/series/gym.webp" alt="Gym"></div>
+                    <h4>Gym</h4>
+                    <p>Pokémon: Red, Blue and Yellow</p>
+                    <span class="item-count">0 sets</span>
+                </div>
+
+                <!-- Base Category -->
+                <div class="category-card" data-category="pokemon-base" onclick="navigateTo('../tcg/pokemon/base.html')">
+                    <div class="category-icon"><img src="../../images/tcg/pokemon/series/base.webp" alt="Base"></div>
+                    <h4>Base</h4>
+                    <p>Pokémon: Red, Blue and Yellow</p>
+                    <span class="item-count">0 sets</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="feedback-link">
+            <p>Found a bug or want to suggest something? <a href="../../feedback.html">Submit feedback here</a></p>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../js/script.js"></script>
+    <script src="../../js/pokemon-tcg.js"></script>
+    <script src="../../js/components.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

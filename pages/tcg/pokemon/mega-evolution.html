@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Evolution</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/style.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main class="container">
+        <div class="page-header">
+            <button class="back-btn" onclick="navigateTo('../pokemon.html')">← Pokémon TCG</button>
+            <h2>Mega Evolution Series</h2>
+            <p class="subtitle">Mega Evolution returns.</p>
+            <div class="search-container">
+                <input type="text" id="globalSearch" placeholder="Search sets..." class="search-input">
+            </div>
+        </div>
+        <section class="categories">
+            <div class="category-grid">
+                <div class="category-card" data-category="pokemon-me-delta-reign" onclick="navigateTo('../tcg/pokemon/me/delta-reign.html')">
+                    <div class="category-icon"><img src="../../../images/tcg/pokemon/sets/me/delta-reign.webp" alt="Delta Reign"></div>
+                    <h4>Delta Reign</h4>
+                    <p>DLR</p>
+                    <span class="item-count">0 cards</span>
+                </div>
+
+                <div class="category-card" data-category="pokemon-me-30th-celebration" onclick="navigateTo('../tcg/pokemon/me/30th-celebration.html')">
+                    <div class="category-icon"><img src="../../../images/tcg/pokemon/sets/me/30th-celebration.webp" alt="30th Celebration"></div>
+                    <h4>30th Celebration</h4>
+                    <p>30C</p>
+                    <span class="item-count">160 cards</span>
+                </div>
+
+                <div class="category-card" data-category="pokemon-me-pitch-black" onclick="navigateTo('../tcg/pokemon/me/pitch-black.html')">
+                    <div class="category-icon"><img src="../../../images/tcg/pokemon/sets/me/pitch-black.webp" alt="Pitch Black"></div>
+                    <h4>Pitch Black</h4>
+                    <p>PBL</p>
+                    <span class="item-count">120 cards</span>
+                </div>
+
+                <div class="category-card" data-category="pokemon-me-chaos-rising" onclick="navigateTo('../tcg/pokemon/me/chaos-rising.html')">
+                    <div class="category-icon"><img src="../../../images/tcg/pokemon/sets/me/chaos-rising.webp" alt="Chaos Rising"></div>
+                    <h4>Chaos Rising</h4>
+                    <p>CRI</p>
+                    <span class="item-count">122 cards</span>
+                </div>
+
+                <div class="category-card" data-category="pokemon-me-perfect-order" onclick="navigateTo('../tcg/pokemon/me/perfect-order.html')">
+                    <div class="category-icon"><img src="../../../images/tcg/pokemon/sets/me/perfect-order.webp" alt="Perfect Order"></div>
+                    <h4>Perfect Order</h4>
+                    <p>POR</p>
+                    <span class="item-count">124 cards</span>
+                </div>
+
+                <div class="category-card" data-category="pokemon-me-ascended-heroes" onclick="navigateTo('../tcg/pokemon/me/ascended-heroes.html')">
+                    <div class="category-icon"><img src="../../../images/tcg/pokemon/sets/me/ascended-heroes.webp" alt="Ascended Heroes"></div>
+                    <h4>Ascended Heroes</h4>
+                    <p>ASC</p>
+                    <span class="item-count">295 cards</span>
+                </div>
+
+                <div class="category-card" data-category="pokemon-me-phantasmal-flames" onclick="navigateTo('../tcg/pokemon/me/phantasmal-flames.html')">
+                    <div class="category-icon"><img src="../../../images/tcg/pokemon/sets/me/phantasmal-flames.webp" alt="Phantasmal Flames"></div>
+                    <h4>Phantasmal Flames</h4>
+                    <p>PFL</p>
+                    <span class="item-count">130 cards</span>
+                </div>
+
+                <div class="category-card" data-category="pokemon-me-mega-evolution" onclick="navigateTo('../tcg/pokemon/me/mega-evolution.html')">
+                    <div class="category-icon"><img src="../../../images/tcg/pokemon/sets/me/mega-evolution.webp" alt="Mega Evolution"></div>
+                    <h4>Mega Evolution</h4>
+                    <p>MEG</p>
+                    <span class="item-count">188 cards</span>
+                </div>
+
+                <div class="category-card" data-category="pokemon-me-black-star-promos" onclick="navigateTo('../tcg/pokemon/me/black-star-promos.html')">
+                    <div class="category-icon"><img src="../../../images/tcg/pokemon/sets/me/black-star-promos.webp" alt="Black Star Promos"></div>
+                    <h4>Black Star Promos</h4>
+                    <p>MEP</p>
+                    <span class="item-count">111 cards</span>
+                </div>
+
+                <div class="category-card" data-category="pokemon-me-energy" onclick="navigateTo('../tcg/pokemon/me/energy.html')">
+                    <div class="category-icon"><img src="../../../images/tcg/pokemon/sets/me/energy.webp" alt="Energy"></div>
+                    <h4>Energy</h4>
+                    <p>MEE</p>
+                    <span class="item-count">16 cards</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="feedback-link">
+            <p>Found a bug or want to suggest something? <a href="../../components/feedback.html">Submit feedback here</a></p>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../js/script.js"></script>
+    <script src="../../../js/pokemon-tcg.js"></script>
+    <script src="../../../js/components.js"></script>
+</body>
+</html>
