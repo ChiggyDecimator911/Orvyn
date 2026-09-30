@@ -331,7 +331,7 @@ const cardDatabase = {
             name: cardInfo.name,
             rarity: cardInfo.rarity,
             artist: cardInfo.artist,
-            image: `ASC_${String(i).padStart(3, '0')}.webp`,
+            image: `../../../../images/tcg/pokemon/sets/me/ascended-heroes/ASC_${String(i).padStart(3, '0')}.webp`,
             url: `asc-${String(i).padStart(3, '0')}.html`,
             isSecret: false
         });
@@ -350,7 +350,7 @@ const cardDatabase = {
             name: cardInfo.name,
             rarity: cardInfo.rarity,
             artist: cardInfo.artist,
-            image: `ASC_${String(i).padStart(3, '0')}.webp`,
+            image: `../../../../images/tcg/pokemon/sets/me/ascended-heroes/ASC_${String(i).padStart(3, '0')}.webp`,
             url: `asc-${String(i).padStart(3, '0')}.html`,
             isSecret: true
         });
@@ -387,10 +387,10 @@ function createCardElement(card) {
     
     cardDiv.innerHTML = `
         <div class="card-image">
-            <img src="../../../images/sets/pokemon/ascended-heroes/${card.image}" 
+            <img src="${card.image}" 
                  alt="${card.name}" 
                  class="card-img"
-                 onerror="this.src='../../../images/cards/placeholder.webp'">
+                 onerror="this.src='../../../../images/cards/placeholder.webp'">
         </div>
         <div class="card-info">
             <div class="card-number">#${String(card.number).padStart(3, '0')}</div>
@@ -398,7 +398,7 @@ function createCardElement(card) {
             <div class="card-meta">
                 <div class="meta-row">
                     <span class="meta-label">Rarity:</span>
-                    <span class="rarity-badge ${getRarityClass(card.rarity)}" title="${card.rarity}">${getRarityDisplayText(card.rarity)}</span>
+                    <span class="meta-value rarity-badge ${getRarityClass(card.rarity)}" title="${card.rarity}">${getRarityDisplayText(card.rarity)}</span>
                 </div>
                 <div class="meta-row">
                     <span class="meta-label">Artist:</span>
