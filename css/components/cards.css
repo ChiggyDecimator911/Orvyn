@@ -28,7 +28,7 @@
 }
 
 .category-icon {
-    width: 144px;
+    width: min(100%, 220px);
     height: 144px;
     display: flex;
     align-items: center;
@@ -67,6 +67,11 @@
     max-height: none !important;
     object-fit: contain;
     padding: 5px;
+}
+
+.category-icon img[src$=".svg"] {
+    width: 144px !important;
+    height: 144px !important;
 }
 
 @media (max-width: 768px) {
