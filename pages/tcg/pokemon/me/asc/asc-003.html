@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../../css/style.css">
+    <link rel="stylesheet" href="../../../../../css/pages/card-detail.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main class="container">
+        <div class="page-header">
+            <button class="back-btn" onclick="navigateTo('../ascended-heroes.html')">← Ascended Heroes</button>
+            <h2 id="pageTitle"></h2>
+            <p class="subtitle" id="pageSubtitle"></p>
+        </div>
+
+        <div class="cd-layout">
+            <!-- LEFT: big card image + language dropdown -->
+            <aside class="cd-visual">
+                <div class="cd-frame">
+                    <img id="cardImage" class="cd-image" src="" alt="">
+                </div>
+                <div class="cd-lang">
+                    <label for="languageSelect">Printed languages</label>
+                    <select id="languageSelect" class="matchday-filter-select"></select>
+                </div>
+            </aside>
+
+            <!-- RIGHT: islands (filled by js/tcg/pokemon/card-detail.js) -->
+            <div class="cd-column">
+                <section class="cd-island" id="islandHeader"></section>
+                <section class="cd-island" id="islandMoves"></section>
+                <section class="cd-island" id="islandStats"></section>
+                <section class="cd-island cd-island--small" id="islandFooter"></section>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../../../js/script.js"></script>
+    <!-- 1) this card's data  2) shared renderer -->
+    <script src="../../../../../js/tcg/pokemon/cards/asc-003.js"></script>
+    <script src="../../../../../js/tcg/pokemon/card-detail.js"></script>
+    <script src="../../../../../js/components.js"></script>
+</body>
+</html>

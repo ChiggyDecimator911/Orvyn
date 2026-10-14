@@ -28,8 +28,6 @@ a:hover::after, .inline-link:hover::after {
 
 /* Background highlight for links embedded in text content or auth forms */
 .section-content p a,
-.story-block p a,
-.trivia-list li a,
 .intro-card p a,
 .inline-link:not(.auth-container a) { /* Exclude .auth-container a from this background style */
     background: rgba(99, 102, 241, 0.08); /* Light blue/purple background */
