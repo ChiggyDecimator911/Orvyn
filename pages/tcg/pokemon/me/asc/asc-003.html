@@ -3,41 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Detail</title>
+    <title>Erika's Vileplume ex</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../../../../css/style.css">
-    <link rel="stylesheet" href="../../../../../css/pages/card-detail.css">
 </head>
 <body>
     <div id="navbar-placeholder"></div>
 
-    <main class="container">
+    <main class="container card-detail">
         <div class="page-header">
             <button class="back-btn" onclick="navigateTo('../ascended-heroes.html')">← Ascended Heroes</button>
-            <h2 id="pageTitle"></h2>
-            <p class="subtitle" id="pageSubtitle"></p>
+            <h2>Erika's Vileplume ex</h2>
+            <p class="subtitle">Ascended Heroes · 003/217</p>
         </div>
 
-        <div class="cd-layout">
-            <!-- LEFT: big card image + language dropdown -->
-            <aside class="cd-visual">
-                <div class="cd-frame">
-                    <img id="cardImage" class="cd-image" src="" alt="">
-                </div>
-                <div class="cd-lang">
-                    <label for="languageSelect">Printed languages</label>
-                    <select id="languageSelect" class="matchday-filter-select"></select>
+        <div class="card-detail__layout">
+            <aside class="card-detail__visual">
+                <figure class="card-detail__frame">
+                    <img
+                        id="cardImage"
+                        class="card-detail__image"
+                        src="../../../../../images/tcg/pokemon/sets/me/asc/ASC_003.webp"
+                        alt="Erika's Vileplume ex, a Grass-type Stage 2 Pokemon card with 310 HP"
+                    >
+                </figure>
+                <div class="card-detail__language">
+                    <label for="cardLanguage">Printed language</label>
+                    <select id="cardLanguage" aria-describedby="languageNote">
+                        <option value="en">English</option>
+                    </select>
+                    <p id="languageNote">Only the English card image is available right now.</p>
                 </div>
             </aside>
 
-            <!-- RIGHT: islands (filled by js/tcg/pokemon/card-detail.js) -->
-            <div class="cd-column">
-                <section class="cd-island" id="islandHeader"></section>
-                <section class="cd-island" id="islandMoves"></section>
-                <section class="cd-island" id="islandStats"></section>
-                <section class="cd-island cd-island--small" id="islandFooter"></section>
+            <div class="card-detail__islands">
+                <section class="card-island" aria-labelledby="cardName">
+                    <div class="card-island__topline">
+                        <div>
+                            <p class="card-island__eyebrow">#003</p>
+                            <h3 class="card-island__title" id="cardName">Erika's Vileplume ex</h3>
+                        </div>
+                        <div class="card-detail__type-hp">
+                            <div class="energy-stack" role="img" aria-label="Grass type">
+                                <span class="energy-symbol card-icon" aria-hidden="true" data-placeholder="G">
+                                    <img src="../../../../../images/tcg/pokemon/icons/grass-energy.webp" alt="">
+                                </span>
+                            </div>
+                            <p class="card-detail__hp">HP <strong>310</strong></p>
+                        </div>
+                    </div>
+                    <div class="card-detail__identity">
+                        <span>Pokemon</span>
+                        <span>Stage 2</span>
+                        <span>Evolves from <strong>Erika's Gloom</strong></span>
+                    </div>
+                </section>
+
+                <section class="card-island" aria-labelledby="movesTitle">
+                    <h2 id="movesTitle">Attacks &amp; Abilities</h2>
+                    <div id="cardMoves"></div>
+                </section>
+
+                <section class="card-island" aria-label="Combat stats">
+                    <dl class="card-detail__stats" id="cardStats"></dl>
+                </section>
+
+                <section class="card-island card-island--metadata" aria-label="Print details">
+                    <dl class="card-detail__metadata">
+                        <div><dt>Regulation Mark</dt><dd>J</dd></div>
+                        <div><dt>Set Number</dt><dd>003/217</dd></div>
+                        <div><dt>Illustrator</dt><dd>5ban Graphics</dd></div>
+                        <div><dt>Rarity</dt><dd>Double Rare</dd></div>
+                    </dl>
+                </section>
             </div>
         </div>
     </main>
@@ -45,9 +85,164 @@
     <div id="footer-placeholder"></div>
 
     <script src="../../../../../js/script.js"></script>
-    <!-- 1) this card's data  2) shared renderer -->
-    <script src="../../../../../js/tcg/pokemon/cards/asc-003.js"></script>
-    <script src="../../../../../js/tcg/pokemon/card-detail.js"></script>
+    <script>
+        const cardPrints = {
+            en: "../../../../../images/tcg/pokemon/sets/me/asc/ASC_003.webp"
+        };
+        const cardDetails = {
+            moves: [
+                {
+                    kind: "ability",
+                    name: "Lovely Fragrance",
+                    description: "Once during your turn, you may use this Ability. Heal 30 damage from each of your Pokemon."
+                },
+                {
+                    energy: ["grass", "grass", "colorless"],
+                    name: "Bloom Powder",
+                    damage: "160",
+                    description: "Your opponent's Active Pokemon is now Asleep and Poisoned."
+                }
+            ],
+            weakness: { type: "fire", value: "×2" },
+            resistance: null,
+            retreatCost: ["colorless", "colorless"]
+        };
+        const energyTypes = {
+            grass: { label: "Grass", placeholder: "G" },
+            fire: { label: "Fire", placeholder: "F" },
+            water: { label: "Water", placeholder: "W" },
+            lightning: { label: "Lightning", placeholder: "L" },
+            psychic: { label: "Psychic", placeholder: "P" },
+            fighting: { label: "Fighting", placeholder: "F" },
+            darkness: { label: "Darkness", placeholder: "D" },
+            metal: { label: "Metal", placeholder: "M" },
+            colorless: { label: "Colorless", placeholder: "C" },
+            fairy: { label: "Fairy", placeholder: "Y" },
+            dragon: { label: "Dragon", placeholder: "D" }
+        };
+        const moveKinds = {
+            ability: "Ability",
+            "poke-power": "Poké-Power",
+            "poke-body": "Poké-Body"
+        };
+        const cardLanguage = document.getElementById("cardLanguage");
+        const cardImage = document.getElementById("cardImage");
+
+        function createEnergyIcon(type) {
+            const energy = energyTypes[type] || { label: type, placeholder: "?" };
+            const icon = document.createElement("span");
+            icon.className = "energy-symbol card-icon";
+            icon.dataset.placeholder = energy.placeholder;
+            icon.setAttribute("role", "img");
+            icon.setAttribute("aria-label", `${energy.label} energy`);
+
+            if (energyTypes[type]) {
+                const image = document.createElement("img");
+                image.alt = "";
+                image.addEventListener("load", () => icon.classList.add("has-image"), { once: true });
+                icon.append(image);
+                image.src = `../../../../../images/tcg/pokemon/icons/${type}-energy.webp`;
+                if (image.complete && image.naturalWidth > 0) icon.classList.add("has-image");
+            }
+
+            return icon;
+        }
+
+        function createEnergyStack(energies) {
+            const stack = document.createElement("div");
+            const labels = energies.map((type) => `${energyTypes[type]?.label || type} energy`);
+            stack.className = "energy-stack";
+            stack.setAttribute("role", "img");
+            stack.setAttribute("aria-label", labels.join(", "));
+            energies.forEach((type) => stack.append(createEnergyIcon(type)));
+            return stack;
+        }
+
+        function renderMoves() {
+            const container = document.getElementById("cardMoves");
+            cardDetails.moves.forEach((move) => {
+                const article = document.createElement("article");
+                const heading = document.createElement("div");
+                const name = document.createElement("h3");
+                article.className = "card-move";
+                heading.className = "card-move__heading";
+
+                if (move.kind && moveKinds[move.kind]) {
+                    const badge = document.createElement("span");
+                    badge.className = `card-move__kind card-move__kind--${move.kind}`;
+                    badge.textContent = moveKinds[move.kind];
+                    heading.append(badge);
+                } else if (move.energy?.length) {
+                    heading.append(createEnergyStack(move.energy));
+                }
+
+                name.textContent = move.name;
+                heading.append(name);
+                if (move.damage) {
+                    const damage = document.createElement("strong");
+                    damage.className = "card-move__damage";
+                    damage.textContent = move.damage;
+                    heading.append(damage);
+                }
+
+                article.append(heading);
+                if (move.description) {
+                    const description = document.createElement("p");
+                    description.textContent = move.description;
+                    article.append(description);
+                }
+                container.append(article);
+            });
+        }
+
+        function renderCombatStats() {
+            const container = document.getElementById("cardStats");
+            const stats = [
+                { label: "Weakness", value: cardDetails.weakness },
+                { label: "Resistance", value: cardDetails.resistance },
+                { label: "Retreat Cost", energies: cardDetails.retreatCost }
+            ];
+
+            stats.forEach((stat) => {
+                const item = document.createElement("div");
+                const label = document.createElement("dt");
+                const value = document.createElement("dd");
+                item.append(label, value);
+                label.textContent = stat.label;
+
+                if (stat.energies) {
+                    stat.energies.forEach((type) => value.append(createEnergyIcon(type)));
+                } else if (stat.value) {
+                    if (stat.value.type) value.append(createEnergyIcon(stat.value.type));
+                    if (stat.value.value) {
+                        const text = document.createElement("span");
+                        text.textContent = stat.value.value;
+                        value.append(text);
+                    }
+                }
+                container.append(item);
+            });
+        }
+
+        cardLanguage.addEventListener("change", () => {
+            const selectedPrint = cardPrints[cardLanguage.value];
+            if (selectedPrint) cardImage.src = selectedPrint;
+        });
+
+        renderMoves();
+        renderCombatStats();
+
+        document.querySelectorAll(".card-icon img").forEach((iconImage) => {
+            if (iconImage.complete && iconImage.naturalWidth > 0) {
+                iconImage.parentElement.classList.add("has-image");
+                return;
+            }
+
+            iconImage.addEventListener("load", () => {
+                iconImage.parentElement.classList.add("has-image");
+            }, { once: true });
+        });
+    </script>
     <script src="../../../../../js/components.js"></script>
 </body>
 </html>

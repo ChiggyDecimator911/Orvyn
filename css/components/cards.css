@@ -28,12 +28,13 @@
 }
 
 .category-icon {
-    width: 200;
-    height: 200px;
+    width: 144px;
+    height: 144px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    margin: 0 auto 1rem;
 }
     
 .category-card h4 {
@@ -65,6 +66,7 @@
     max-width: none !important;
     max-height: none !important;
     object-fit: contain;
+    padding: 5px;
 }
 
 @media (max-width: 768px) {

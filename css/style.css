@@ -21,6 +21,7 @@
 /* Pages */
 @import url('pages/home.css');
 @import url('pages/tcg.css');
+@import url('pages/tcg/card-detail.css');
 @import url('pages/changelog.css');
 @import url('pages/feedback.css');
 @import url('pages/profile-setup.css');
